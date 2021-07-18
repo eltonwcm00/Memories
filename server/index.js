@@ -5,6 +5,11 @@ const cors = require('cors');
 
 const app = express();
 
+// routes
+const postRoutes = require('./routes/posts.js');
+
+app.use('/posts', postRoutes);  //feed the route when localhost:5000/posts
+
 app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors());
