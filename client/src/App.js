@@ -5,15 +5,19 @@ import memories from './images/memories.png';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 
+import useStyles from './styles';
+
 const App = () => {
-    return (
-        
+    
+    const materialUI = useStyles();
+    
+    return (  
         <Container maxidth="lg">
-            <AppBar position="static" color="inherit">
-                <Typography variant="h2" align="center">
-                Memories
+            <AppBar position="static" color="inherit" className={materialUI.appBar}>
+                <Typography variant="h2" align="center" className={materialUI.heading}>
+                    Memories
                 </Typography>
-                <img src={memories} alt="memories" height="460" />
+                <img src={memories} alt="memories" height="60" className={materialUI.image}/>
             </AppBar>
             <Grow in>
                 <Container>
@@ -28,8 +32,7 @@ const App = () => {
                     </Grid>  
                 </Container>
             </Grow>
-        </Container>
-        
+        </Container>  
     );
 }
 
