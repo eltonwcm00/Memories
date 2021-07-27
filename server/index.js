@@ -8,11 +8,11 @@ const app = express();
 // routes
 const postRoutes = require('./routes/posts.js');
 
-app.use('/posts', postRoutes);  //feed the route when localhost:5000/posts
-
 app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors());
+
+app.use('/posts', postRoutes);  //feed the route when localhost:5000/posts
 
 const CONNECTION_URL = 'mongodb+srv://elton:1234@memories.koalb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
