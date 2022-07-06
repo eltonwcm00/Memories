@@ -4,7 +4,7 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
 
 export default (posts = [], action) => {
-  switch (action.type) {
+  switch (action.type) { //action.type is from post.js(action/post.js)
     case FETCH_ALL:
       return action.payload; //action.payload is from ../actions/posts
     case LIKE:
